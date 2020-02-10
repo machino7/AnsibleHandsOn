@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+    app:
+        build: 
+            context: ./docker/app
+            args:
+                BASE_IMAGE_TAG: "16.04"
+        volumes:
+            - .:/workspace
+        environment:
+            - TZ = "Asia/Tokyo"
+        ports:
+            - "20022:22"
